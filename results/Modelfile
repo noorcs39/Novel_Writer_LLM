@@ -1,0 +1,37 @@
+FROM tinyllama
+
+# Set custom parameters for fine-tuning
+PARAMETER temperature 0.7
+PARAMETER top_p 0.9
+PARAMETER top_k 40
+PARAMETER repeat_penalty 1.1
+
+# System message for the fine-tuned model
+SYSTEM You are a knowledgeable assistant trained on sacred texts, religious writings, philosophical works, and spiritual literature. You can write articles, explain concepts, and discuss topics related to religion, spirituality, philosophy, and ancient wisdom traditions. You provide thoughtful, respectful, and informative responses.
+
+# Training examples (first 10000 characters as examples)
+
+
+# Example 1
+MESSAGE user "Write about this topic: Title: African Religion & Spirituality - Complete Text Collection | Sacred Texts Archive URL: https:..."
+MESSAGE assistant "Title: African Religion & Spirituality - Complete Text Collection | Sacred Texts Archive URL: https://www.sacred-texts.com/afr/index.htm ================================================== Topics Home Catalog African Age of Reason Alchemy Americana Ancient Near East Astrology Asia Atlantis Australia Basque Baha'i Bible Book of Shadows Buddhism Celtic Christianity Classics Comparative Confucianism DNA Earth Mysteries Egyptian England Esoteric/Occult Evil Fortean Freemasonry Gothic Gnosticism Grimoires"
+
+
+# Example 2
+MESSAGE user "Write about this topic: Hinduism I Ching Islam Icelandic Jainism Journals Judaism Legends/Sagas Legendary Creatures LGBT Mis..."
+MESSAGE assistant "Hinduism I Ching Islam Icelandic Jainism Journals Judaism Legends/Sagas Legendary Creatures LGBT Miscellaneous Mormonism Mysticism Native American Necronomicon New Thought Neopaganism/Wicca Nostradamus Oahspe Pacific Paleolithic Parapsychology Philosophy Piri Re'is Map Prophecy Roma Sacred Books of the East Sacred Sexuality Shakespeare Shamanism Shinto Symbolism Sikhism Sub Rosa Swedenborg Tantra Taoism Tarot Thelema Theosophy Time Tolkien UFOs Utopia Women Wisdom of the East Zoroastrianism Sacred-texts home"
+
+
+# Example 3
+MESSAGE user "Write about this topic: OCRT: Santeria OCRT: Vodun Australian Native American Buy CD-ROM Buy Books on African Spirituality A..."
+MESSAGE assistant "OCRT: Santeria OCRT: Vodun Australian Native American Buy CD-ROM Buy Books on African Spirituality African Religion South Africa The Bantu West and Central Africa Comparative African-American Caribbean Rastafarianism Vodun History Ultimately, we are all Africans.  Studies of mitochondrial DNA have proven that all human beings  are descended from a small population (less than a hundred individuals)  that emerged from Africa about 60,000 years ago.  The earliest written religious texts as well as  the first documented monotheistic religion also developed in Africa."
+
+
+# Example 4
+MESSAGE user "Write about this topic: During the European dark ages, many ancient manuscripts were preserved  in African libraries in plac..."
+MESSAGE assistant "During the European dark ages, many ancient manuscripts were preserved  in African libraries in places such as Ethiopia and Timbuctoo. This section has texts on the traditional spirituality of  Sub-Saharan Africa, as well as their descendants in the New World. Finding books about African religion and spiritual beliefs in the public domain was not difficult.  These books have a great amount of useful information on this topic,  some of it written before colonialism destroyed or greatly modified  aspects of traditional culture."
+
+
+# Example 5
+MESSAGE user "Write about this topic: The problem with these works is that they were for the large part  written by Europeans with their p..."
+MESSAGE assistant "The problem with these works is that they were for the large part  written by Europeans with their particular biases and agendas.  For this reason, we encourage you to 'read between the lines'. The texts here are provided for scholarly purposes.  They may contain racist characterizations, errors of interpretation,  or misrepresentations of traditional culture.  For instance, the term 'Kaffir', which is used in many of  these texts to refer to the Xhosa (Nelson Mandela's tribe),  is now considered derogatory."

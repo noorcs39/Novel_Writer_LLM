@@ -1,0 +1,62 @@
+[
+  {
+    "subject": "Meeting Request - Project Discussion",
+    "body": "Hi John, I hope this email finds you well. I would like to schedule a meeting to discuss the upcoming project milestones and deliverables. Are you available next Tuesday at 2 PM? Please let me know if this time works for you, or suggest an alternative. Best regards, Sarah",
+    "category": "meeting",
+    "tone": "formal"
+  },
+  {
+    "subject": "Thank you for your assistance",
+    "body": "Dear Team, I wanted to take a moment to express my sincere gratitude for all your hard work on the recent campaign. Your dedication and creativity made all the difference in achieving our goals. Thank you for going above and beyond. Warm regards, Michael",
+    "category": "thank_you",
+    "tone": "friendly"
+  },
+  {
+    "subject": "Urgent: System Maintenance Tonight",
+    "body": "URGENT NOTICE: We will be performing critical system maintenance tonight from 11 PM to 3 AM. All services will be temporarily unavailable during this time. Please plan accordingly and save your work before 11 PM. We apologize for any inconvenience. IT Support Team",
+    "category": "customer_service",
+    "tone": "urgent"
+  },
+  {
+    "subject": "Apology for the delay",
+    "body": "Dear Mr. Johnson, I sincerely apologize for the delay in responding to your inquiry. Due to an unexpected high volume of requests, we experienced some delays in our response time. I have personally reviewed your case and will provide you with a detailed response by tomorrow. Thank you for your patience. Best regards, Lisa",
+    "category": "customer_service",
+    "tone": "apologetic"
+  },
+  {
+    "subject": "Business Proposal - Partnership Opportunity",
+    "body": "Dear Ms. Anderson, I am writing to propose a strategic partnership between our companies. Our market research indicates significant synergies that could benefit both organizations. I would appreciate the opportunity to discuss this proposal in detail. Could we schedule a call next week? Looking forward to your response. Sincerely, Robert Chen",
+    "category": "business",
+    "tone": "formal"
+  },
+  {
+    "subject": "Quick question about the report",
+    "body": "Hey Alex! Hope you're having a great day. I had a quick question about the quarterly report you sent yesterday. Could you clarify the numbers in section 3? No rush, just when you get a chance. Thanks! Emma",
+    "category": "general",
+    "tone": "friendly"
+  },
+  {
+    "subject": "Introduction - Networking Event Follow-up",
+    "body": "Hello David, It was a pleasure meeting you at the networking event last week. I was impressed by your insights on digital marketing trends. I would love to continue our conversation and explore potential collaboration opportunities. Would you be interested in grabbing coffee sometime next week? Best, Jennifer",
+    "category": "networking",
+    "tone": "friendly"
+  },
+  {
+    "subject": "Contract Review Required",
+    "body": "Dear Legal Team, Please review the attached contract for the new vendor agreement. We need your feedback by Friday to proceed with the negotiations. Pay special attention to clauses 5 and 7 regarding liability and termination conditions. Please let me know if you need any additional information. Regards, Mark Thompson",
+    "category": "business",
+    "tone": "formal"
+  },
+  {
+    "subject": "Welcome to the team!",
+    "body": "Hi Jessica, Welcome to our amazing team! We're so excited to have you join us. Your first day is Monday, and I'll be there to help you get settled in. I've attached your onboarding schedule and some helpful resources. If you have any questions before Monday, don't hesitate to reach out. Looking forward to working with you! Cheers, Amanda",
+    "category": "general",
+    "tone": "friendly"
+  },
+  {
+    "subject": "Immediate Action Required - Security Alert",
+    "body": "SECURITY ALERT: We have detected unusual activity on your account. Please change your password immediately and review your recent account activity. If you notice any unauthorized transactions, contact our security team at once. Do not ignore this message. Security Team",
+    "category": "customer_service",
+    "tone": "urgent"
+  }
+]
