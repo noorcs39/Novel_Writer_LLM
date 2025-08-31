@@ -10,35 +10,32 @@ A powerful Large Language Model (LLM)-based tool designed to assist in writing, 
 - **Style Suggestions**: Adapt writing style to match different genres and tones
 - **Chapter Planning**: Organize and structure your novel effectively
 - **Genre-Specific Writing**: Tailored assistance for romance, thriller, sci-fi, fantasy, and more
-- **Real-time Collaboration**: Work alongside AI to refine and enhance your creative vision
 
-## 📁 Project Structure
+## 📁 Actual Project Structure
 
 ```
 Novel_Writer_LLM/
-├── README.md                    # This file - project overview and setup
+├── README.md                    # Project overview and setup
 ├── requirements.txt            # Python dependencies
 ├── src/                        # Core source code
-│   ├── novel_writer.py         # Main novel writing interface
-│   ├── character_builder.py    # Character development tools
-│   ├── plot_generator.py       # Story and plot generation
-│   ├── dialogue_engine.py      # Dialogue generation system
-│   └── style_adapter.py        # Writing style customization
+│   ├── email_fine_tune.py      # Model fine-tuning utilities
+│   ├── fine_tune_model.py      # Core fine-tuning logic
+│   ├── pdf_to_json.py          # PDF processing utilities
+│   └── scraper.py              # Data collection tools
 ├── data/                       # Training and reference data
-│   ├── novels_dataset.json     # Fine-tuning dataset
-│   ├── character_templates/    # Pre-built character archetypes
-│   └── genre_examples/         # Writing samples by genre
-├── models/                     # Trained model files
+│   └── finetune_dataset.json   # Fine-tuning dataset
+├── scraped_data/               # Collected training data
+│   ├── sacred_texts_content.json
+│   ├── sacred_texts_training.txt
+│   └── scraping_stats.json
+├── results/                    # Model configurations and outputs
+│   ├── EmailModelfile          # Email model configuration
+│   └── Modelfile               # General model configuration
 ├── tests/                      # Test suites
-│   ├── test_novel_writer.py    # Core functionality tests
-│   └── test_character_dev.py   # Character development tests
-├── scripts/                    # Utility scripts
-│   ├── setup_models.py         # Model initialization
-│   └── generate_samples.py     # Sample generation utilities
+│   ├── test_Novel_model.py     # Novel model tests
+│   └── test_email_model.py     # Email model tests
 └── docs/                       # Documentation
-    ├── API_REFERENCE.md        # API documentation
-    ├── TUTORIALS.md           # Step-by-step guides
-    └── WRITING_GUIDE.md       # Best practices for AI-assisted writing
+    └── Untitled document.pdf   # Additional documentation
 ```
 
 ## 🛠️ Installation & Setup
@@ -62,124 +59,86 @@ Novel_Writer_LLM/
 
 3. **Set up Ollama models**:
    ```bash
-   python scripts/setup_models.py
+   # Use existing model configurations
+   ollama create novel-writer-llm -f results/Modelfile
    ```
 
 4. **Test the installation**:
    ```bash
-   python tests/test_novel_writer.py
+   python tests/test_Novel_model.py
    ```
 
 ## 🎯 Usage
 
-### Basic Novel Writing
-```python
-from src.novel_writer import NovelWriter
-
-writer = NovelWriter()
-story = writer.generate_novel(
-    genre="fantasy",
-    theme="coming of age",
-    word_count=50000,
-    protagonist="young wizard"
-)
-```
-
-### Character Development
-```python
-from src.character_builder import CharacterBuilder
-
-builder = CharacterBuilder()
-character = builder.create_character(
-    name="Elara Moonwhisper",
-    role="protagonist",
-    traits=["brave", "curious", "impulsive"],
-    backstory="Orphaned at birth, raised by forest spirits"
-)
-```
-
-### Plot Generation
-```python
-from src.plot_generator import PlotGenerator
-
-generator = PlotGenerator()
-plot_outline = generator.create_plot(
-    genre="mystery",
-    setting="Victorian London",
-    central_conflict="missing heir to fortune"
-)
-```
-
-## 🧪 Testing
-
-Run the comprehensive test suite:
-
+### Basic Model Usage
 ```bash
-# Run all tests
-python -m pytest tests/
+# Test the novel writing capabilities
+python tests/test_Novel_model.py
 
-# Run specific test categories
-python tests/test_novel_writer.py
-python tests/test_character_dev.py
-
-# Interactive testing mode
-python -m tests.interactive_novel_test
+# Test email writing capabilities (for reference)
+python tests/test_email_model.py
 ```
 
-## 🎨 Supported Genres
+### Data Processing
+```bash
+# Process PDF documents for training data
+python src/pdf_to_json.py
 
-- **Fantasy**: Epic quests, magical systems, mythical creatures
-- **Science Fiction**: Space opera, cyberpunk, dystopian futures
-- **Romance**: Contemporary, historical, paranormal romance
-- **Thriller**: Psychological, spy, legal thrillers
-- **Mystery**: Cozy mysteries, noir, detective stories
-- **Horror**: Gothic, supernatural, psychological horror
-- **Historical Fiction**: Various time periods and cultures
-- **Young Adult**: Coming-of-age, dystopian, contemporary themes
+# Scrape additional training data
+python src/scraper.py
+```
+
+### Model Fine-tuning
+```bash
+# Fine-tune the model with existing dataset
+python src/fine_tune_model.py
+
+# Fine-tune with email-specific data
+python src/email_fine_tune.py
+```
+
+## 📊 Data Statistics
+
+**Current Training Data**:
+- **177 documents** scraped from sacred-texts.com
+- **372,636 words** of training content
+- **2,121,819 characters** of text data
+- **182 URLs** successfully processed
+- **0 failed** scrapes
 
 ## 🔧 Model Configuration
 
-The project uses Ollama with custom fine-tuned models optimized for creative writing:
+The project uses Ollama with custom configurations:
 
-- **novel-writer-llm**: Primary novel generation model
-- **character-designer-llm**: Specialized for character creation
-- **dialogue-master-llm**: Focused on realistic dialogue
-- **style-mimic-llm**: Adapts to specific author styles
+- **Base Model**: TinyLlama (via Ollama)
+- **Model Files**: Available in `results/` directory
+- **Training Data**: Based on classic literature and narrative texts
 
-## 📊 Performance & Quality
+## 🧪 Testing
 
-- **Training Data**: 500+ classic and contemporary novels
-- **Model Size**: Optimized for creative writing tasks
-- **Response Time**: <2 seconds for 1000-word generations
-- **Quality Metrics**: 94% coherence rating in blind evaluations
+Run the available test suites:
 
-## 🤝 Contributing
+```bash
+# Test novel writing capabilities
+python tests/test_Novel_model.py
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### Development Setup
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/new-feature`
-3. Make your changes and add tests
-4. Run tests: `python -m pytest tests/`
-5. Commit changes: `git commit -am 'Add new feature'`
-6. Push to branch: `git push origin feature/new-feature`
-7. Submit a pull request
+# Test email writing capabilities
+python tests/test_email_model.py
+```
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## 🙏 Acknowledgments
 
 - Built with [Ollama](https://ollama.ai) for local LLM capabilities
 - Training data sourced from public domain literature
-- Inspired by the creative writing community
+- Inspired by creative writing and storytelling communities
 
 ## 📞 Support
 
 - **Issues**: [GitHub Issues](https://github.com/noorcs39/Novel_Writer_LLM/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/noorcs39/Novel_Writer_LLM/discussions)
 - **Email**: noor.cs2@yahoo.com
 
 ---
@@ -190,4 +149,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 📧 **Contact**: noor.cs2@yahoo.com  
 🔗 **GitHub**: [@noorcs39](https://github.com/noorcs39)
 
-*This project represents a comprehensive AI-assisted creative writing platform, designed to empower authors with cutting-edge language model technology.*
+*This project represents a comprehensive AI-assisted creative writing platform, built upon robust data collection and fine-tuning capabilities.*
